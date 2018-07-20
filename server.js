@@ -35,6 +35,11 @@ app.get('/about', (req, res)=> {
 app.get('/bad', (req, res) => {
     res.send({errorMessage: 'oh no there was an error!!!'})
 });
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'projects page',
+    });
+});
 const port = process.env.PORT || 3000;
 app.listen(port, ()=> {
     console.log(`server is up on port ${port}`);
